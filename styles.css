@@ -3,70 +3,211 @@
     height: 180px;
     left: 100px;
     border-radius: 50%;
-    margin-top: 150px;
     position: absolute;
-    color: rgb(0, 0, 0);
-    box-shadow: 
-    150px 240px 0 0 currentColor,
-    300px 240px 0 0 currentColor;
-}
-
-.mustache::before {
-    content: '';
+    color: brown;
+    box-shadow: 150px 300px 0 0 currentColor, 300px 300px 0 0 currentColor;
+  }
+  .mustache::before {
+    content: ' ';
     position: absolute;
     left: 30px;
-    top: 120px;
+    top: 180px;
     width: 210px;
     height: 120px;
     border-bottom: solid 180px currentColor;
     border-radius: 0 0 0 100%;
     transform: rotate(-40deg);
     transform-origin: right 210px;
-}
-
-.mustache::after {
-    content: '';
+  }
+  .mustache::after {
+    content: ' ';
     position: absolute;
     left: 390px;
-    top: 120px;
+    top: 180px;
     width: 210px;
     height: 120px;
     border-bottom: solid 180px currentColor;
     border-radius: 0 0 100% 0;
     transform: rotate(40deg);
     transform-origin: left 210px;
-}
-.borde-ojo {
-    margin-left: 75px;
-    /* ancho */
-    width: 210px;
-    /* alto */
-    height: 210px;
-    /* color de fondo */
-    background-color: black;
-    /* radio del borde */
-    border-radius: 40%;
-    box-shadow: 400px 0 0 0 currentColor;
-}
-
-.centro-ojo {
+  }
+  .mustache:before {
+    animation: shakeLeft 1s ease-in-out infinite;
+  }
+  .mustache:after {
+    animation: shakeRight 4s ease-in-out infinite;
+  }
+  @keyframes shakeLeft {
+    0% {
+      transform: rotate(-50deg);
+    }
+    50% {
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform: rotate(-50deg);
+    }
+  }
+  @keyframes shakeRight {
+    0% {
+      transform: rotate(30deg);
+    }
+    50% {
+      transform: rotate(50deg);
+    }
+    100% {
+      transform: rotate(30deg);
+    }
+  }
+  /*----- ----- ----- OJOS ----- ----- -----*/
+  .ojos {
+    position: relative;
+    left: 200px;
+    top: 1px;
+    width: 500px;
+    z-index: 10;
+  }
+  
+  .ojo {
+    background: #fff;
+    position: relative;
+    border: 5px solid #000;
+    width: 200px;
+    height: 200px;
+    margin-right: -17px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .ojo_externo {
     width: 50px;
     height: 50px;
-    background-color: green;
     border-radius: 50%;
-    /* margen hacia arriba */
-    margin-top: -130px; 
-    /* margen de izquierda */
-    margin-left: 155px;
-    box-shadow: 400px 0 0 0 green;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: brown;
+    border: 3px solid #000;
+  }
+  
+  .ojo_interno {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .pestanas {
+    position: relative;
+    bottom: 46px;
+    left: 25px;
+  }
+  
+  .pestana {
+    width: 30px;
+    height: 5px;
+    background: #000;
+    transform: rotate(120deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    margin-right: 30px;
+    display: inline-block;
+  }
+  
+  .pestana.primera {
+    position: relative;
+    top: 5px;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+  
+  .pestana.tercera {
+    position: relative;
+    top: 1px;
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+  }
+  /*----- ----- ----- CAMISA ----- ----- -----*/
+  .camisa {
     width: 100%;
-    background-color: rgb(219, 56, 219);
-    color: white;
-    text-align: center;
-}
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    bottom: 320px;
+    border-top: 2px solid #000;
+    z-index: 10;
+    overflow: hidden;
+  }
+  
+  .cuello {
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    background: #fff;
+    top: -45px;
+    border: 3px solid #000;
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+  
+  .cuello.primero {
+    left: 275px;
+  }
+  
+  .cuello.segundo {
+    left: 450px;
+    -moz-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+  
+  .corbata {
+  }
+  
+  .cuello_corbata {
+    width: 70px;
+    height: 70px;
+    background: blueviolet;
+    border: 3px solid #000;
+    position: absolute;
+    left: 375px;
+    bottom: 45px;
+    z-index: 500;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .cola_corbata {
+    width: 70px;
+    height: 70px;
+    background: blueviolet;
+    border: 3px solid #000;
+    position: absolute;
+    left: 383px;
+    bottom: 265px;
+    z-index: 50;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
